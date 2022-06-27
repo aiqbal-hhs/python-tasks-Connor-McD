@@ -2,13 +2,13 @@
 print("| Henderson Pizza store |")
 print("")
 
-pizzas_available = ['margarita', 'pepperoni', 'meatlovers', 'butter chicken', 'beef and onion', 'hawaiian']
-toppings_available = ['jalapeno', 'onions', 'capsicum', 'cheese', 'olives', 'tomatoes']
-pizza_prices = {'margarita': 5, 'pepperoni': 7, 'meatlovers': 6, 'butter chicken': 8, 'beef and onion': 7, 'hawaiian': 6.5}
-topping_prices = {'jalapeno':3, 'onions': 2, 'capsicum':3, 'cheese':4, 'olives':4, 'tomatoes':4}
+pizzas_available = ['margarita', 'pepperoni', 'meatlovers', 'butter chicken', 'beef and onion', 'hawaiian', 'cheese supreme', 'cheese and garlic', 'vegetarian', 'chicken cranberry', 'buffalo chicken', 'ham and cheese', 'peri peri chicken']
+toppings_available = ['jalapeno', 'onions', 'capsicum', 'extra cheese', 'olives', 'tomatoes', 'mushrooms', 'spinach', 'extra pepperoni', 'bacon', 'sausage', 'pineapple', 'wedges'  ]
+pizza_prices = {'margarita': 5, 'pepperoni': 7, 'meatlovers': 6, 'butter chicken': 8, 'beef and onion': 7, 'hawaiian': 6.5, 'cheese supreme': 5.5, 'cheese and garlic': 6, 'vegetarian': 7, 'chicken cranberry': 8, 'buffalo chicken': 8.5, 'ham and cheese': 6, 'peri peri chicken': 8.5}
+topping_prices = {'jalapeno':3, 'onions': 2, 'capsicum':3, 'extra cheese':4, 'olives':4, 'tomatoes':4, 'mushrooms': 3, 'spinach': 4, 'extra pepperoni': 4, 'bacon': 4, 'sausage': 4, 'pineapple': 3.5, 'wedges': 5}
 total_price = []
 finished_order = {}
-customers_adress = {}
+customer_address = {}
 
 
 #asking customer for pizza order
@@ -52,7 +52,7 @@ while order_pizza:
     other_pizza = input("Would you like to order any other pizzas?")
     if other_pizza == "no":
         for key, value in finished_order.items():
-            print(f"\nYou have ordered one{key} pizza with {value}")
+            print(f"\nYou have ordered one {key} pizza with {value}")
         check_order = True
         while check_order:
             print()
@@ -73,17 +73,17 @@ while order_pizza:
 #finalizing the order
 print(f"\nYour total order price is: ${sum(total_price)}")
 
-print("Please provide us with your name, adress and phonenumber")
-customers_adress['name'] = input("what is your name?")
-customers_adress['street_name'] = input("What is your housenumber and streetname  ?")
-customers_adress['postalcode'] = input("What is the postalcode?")
-customers_adress['phonenumber'] = input("What is your phonenumber?")
+print("Please provide us with your name, address and phonenumber")
+customer_address['name'] = input("what is your name?")
+customer_address['street_name'] = input("What is your housenumber and streetname  ?")
+customer_address['postalcode'] = input("What is the postalcode?")
+customer_address['phonenumber'] = input("What is your phonenumber?")
 print()
-print(f"Thank you for your order {customer_adress['name']}.")
+print(f"Thank you for your order {customer_address['name']}.")
 print()
-print("We will deliver your order to this adres ASAP")
+print("We will deliver your order to this address ASAP")
 print()
-print(customers_adress['street_name'])
-print(customers_adress['postalcode'])
+print(customer_address['street_name'])
+print(customer_address['postalcode'])
 print()
-print(f"we will contact you on {customer_adress['phonenumber']} if anything comes up.")   
+print(f"we will contact you on {customer_address['phonenumber']} if anything comes up.")   
