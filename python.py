@@ -1,6 +1,6 @@
 
-print("| Henderson Pizza store |")
-print("")
+storename = ('| Henderson Pizza store |')
+print(storename)
 
 pizzas_available = ['margarita', 'pepperoni', 'meatlovers', 'butter chicken', 'beef and onion', 'hawaiian', 'cheese supreme', 'cheese and garlic', 'vegetarian', 'chicken cranberry', 'buffalo chicken', 'ham and cheese', 'peri peri chicken']
 toppings_available = ['jalapeno', 'onions', 'capsicum', 'extra cheese', 'olives', 'tomatoes', 'mushrooms', 'spinach', 'extra pepperoni', 'bacon', 'sausage', 'pineapple', 'wedges'  ]
@@ -12,7 +12,16 @@ customer_address = {}
 
 
 #asking customer for pizza order
-print("Welcome to Henderson Pizza store")
+def greet(name):
+    """
+    This function greets to
+    the person passed in as
+    a parameter
+    """
+    print("Hello " + name + ", Welcome to Henderson Pizza Store!")
+
+greet('User')
+
 order_pizza = True
 while order_pizza:    
     print("could you please choose a pizza you would like to order: ")
@@ -37,7 +46,8 @@ while order_pizza:
         print()
     while order_topping:
         other_topping = input("Would you like an other toppings? yes or no?")
-        if other_topping == "yes":
+        if other_topping == "yes",:
+           
             topping = input("Which one would you like to add on to your pizza?")
             if topping in toppings_available:
                 finished_order.setdefault(pizza, [])
