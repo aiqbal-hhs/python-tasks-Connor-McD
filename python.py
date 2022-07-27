@@ -56,8 +56,8 @@ while order_pizza:
         print(toppings)
         print()
     while order_topping:
-        other_topping = input("Would you like an other toppings? yes or no?")
-        if other_topping == "yes":
+        other_topping = input("Would you like any toppings? yes or no?")
+        if other_topping == "yes" or other_topping == "Yes" or other_topping == "Y" or other_topping == "y" :
            
             topping = input("Which one would you like to add on to your pizza?")
             if topping in toppings_available:
@@ -68,20 +68,20 @@ while order_pizza:
             else:
                 print(f"I am sorry, we don't have {topping} available on our menu.")
 
-        elif other_topping == "no":
+        elif other_topping == "no" or other_topping == "No" or other_topping == "N" or other_topping == "n" :
             break
     other_pizza = input("Would you like to order any other pizzas?")
-    if other_pizza == "no":
+    if other_pizza == "no" or other_pizza == "No" or other_pizza == "N" or other_pizza == "n" :
         for key, value in finished_order.items():
             print(f"\nYou have ordered one {key} pizza with {value}")
         check_order = True
         while check_order:
             print()
             order_correct = input("Is this correct? yes/no ")
-            if order_correct == "yes":
+            if order_correct == "yes" or order_correct == "Yes" or order_correct == "Y" or order_correct == "y" :
                 check_order = False
                 order_pizza = False
-            if order_correct == "no":
+            if order_correct == "no" or order_correct == "No" or order_correct == "N" or order_correct == "n" :
                 print(finished_order)
                 add_remove = input("would you like to add or remove? ")
                 if add_remove == "remove":
