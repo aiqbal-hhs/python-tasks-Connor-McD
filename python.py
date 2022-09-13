@@ -1,37 +1,18 @@
 
-storename = ('| Henderson Pizza store |')
-print(storename)
+print("| Henderson Pizza store |")
+print("")
 
 pizzas_available = ['margarita', 'pepperoni', 'meatlovers', 'butter chicken', 'beef and onion', 'hawaiian', 'cheese supreme', 'cheese and garlic', 'vegetarian', 'chicken cranberry', 'buffalo chicken', 'ham and cheese', 'peri peri chicken']
 toppings_available = ['jalapeno', 'onions', 'capsicum', 'extra cheese', 'olives', 'tomatoes', 'mushrooms', 'spinach', 'extra pepperoni', 'bacon', 'sausage', 'pineapple', 'wedges'  ]
-pizza_prices = {'margarita': 5, 'pepperoni': 7, 'meatlovers': 6, 'butter chicken': 8, 'beef and onion': 7, 'hawaiian': 6.5, 'cheese supreme': 5.5, 'cheese and garlic': 6, 'vegetarian': 7, 'chicken cranberry': 8, 'buffalo chicken': 8.5, 'ham and cheese': 6, 'peri peri chicken': 8.5}
+pizza_prices = {'margarita': 8.50, 'pepperoni': 8.50, 'meatlovers': 8.50, 'butter chicken': 8.50, 'beef and onion': 8.50, 'hawaiian': 8.50, 'cheese supreme': 8.50, 'cheese and garlic': 5, 'vegetarian': 5, 'chicken cranberry': 5, 'buffalo chicken': 5, 'ham and cheese': 5, 'peri peri chicken': 5}
 topping_prices = {'jalapeno':3, 'onions': 2, 'capsicum':3, 'extra cheese':4, 'olives':4, 'tomatoes':4, 'mushrooms': 3, 'spinach': 4, 'extra pepperoni': 4, 'bacon': 4, 'sausage': 4, 'pineapple': 3.5, 'wedges': 5}
 total_price = []
 finished_order = {}
 customer_address = {}
 
-#To show the menu to user
-def ShowMenu():
-    os.system('cls')
-    print("Pizzas Available:\n")
-    print(*pizzas_available,sep = ', ')
-    print("\n\nToppings Available:\n")
-    print(*toppings_available,sep = ', ')
-    print('\n\n')
 
 #asking customer for pizza order
-def greet(name):
-    """
-    This function greets to
-    the person passed in as
-    a parameter
-    """
-    print("Hello " + name + ", Welcome to Henderson Pizza Store!")
-
-greet('User')
-
-
-
+print("Welcome to Henderson Pizza store")
 order_pizza = True
 while order_pizza:    
     print("could you please choose a pizza you would like to order: ")
@@ -48,7 +29,6 @@ while order_pizza:
         if pizza not in pizzas_available:
             print(f"I'm sorry but unfortunately we do not have {pizza} in our menu.")
 
-
     #asking for extra toppings
     order_topping = True
     print("This is the types of extra toppings that are available:: ")
@@ -56,9 +36,8 @@ while order_pizza:
         print(toppings)
         print()
     while order_topping:
-        other_topping = input("Would you like any toppings? yes or no?")
-        if other_topping == "yes" or other_topping == "Yes" or other_topping == "Y" or other_topping == "y" :
-           
+        other_topping = input("Would you like an other toppings? yes or no?")
+        if other_topping == "yes":
             topping = input("Which one would you like to add on to your pizza?")
             if topping in toppings_available:
                 finished_order.setdefault(pizza, [])
@@ -68,20 +47,20 @@ while order_pizza:
             else:
                 print(f"I am sorry, we don't have {topping} available on our menu.")
 
-        elif other_topping == "no" or other_topping == "No" or other_topping == "N" or other_topping == "n" :
+        elif other_topping == "no":
             break
     other_pizza = input("Would you like to order any other pizzas?")
-    if other_pizza == "no" or other_pizza == "No" or other_pizza == "N" or other_pizza == "n" :
+    if other_pizza == "no":
         for key, value in finished_order.items():
             print(f"\nYou have ordered one {key} pizza with {value}")
         check_order = True
         while check_order:
             print()
             order_correct = input("Is this correct? yes/no ")
-            if order_correct == "yes" or order_correct == "Yes" or order_correct == "Y" or order_correct == "y" :
+            if order_correct == "yes":
                 check_order = False
                 order_pizza = False
-            if order_correct == "no" or order_correct == "No" or order_correct == "N" or order_correct == "n" :
+            if order_correct == "no":
                 print(finished_order)
                 add_remove = input("would you like to add or remove? ")
                 if add_remove == "remove":
